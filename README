@@ -1,0 +1,11 @@
+This is a mirror of the OTR website:
+
+  http://www.cypherpunks.ca/otr/
+
+This mirror was created with the following wget command:
+
+  wget -np -m -c http://www.cypherpunks.ca/otr/
+
+This is an unofficial mirror and it does not contain the actual source
+for the OTR website. The actual website is dynamic and generated with
+PHP.
