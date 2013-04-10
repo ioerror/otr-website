@@ -1,0 +1,79 @@
+
+body,
+.a1, .a1 td,
+.a2, .a2 td,
+.a3, .a3 td,
+.a4, .a4 td,
+.a5, .a5 td,
+.a6, .a6 td
+    {font-family: arial, helvetica;}
+
+.u1, .u1 td,
+.v1, .v1 td,
+.v2, .v2 td,
+.v3, .v3 td,
+.v4, .v4 td,
+.v5, .v5 td,
+.v6, .v6 td
+    {font-family: verdana, geneva, helvetica; }
+
+.m1, .m1 td,
+.m2, .m2 td,
+.m3, .m3 td,
+.m4, .m4 td,
+.m5, .m5 td,
+.m6, .m6 td
+    {font-family: ms sans serif, geneva, helvetica; }
+
+.t1, .t1 td,
+.t2, .t2 td,
+.t3, .t3 td,
+.t4, .t4 td,
+.t5, .t5 td,
+.t6, .t6 td
+    {font-family: trebuchet ms, arial, helvetica;}
+
+.u2, .u2 td,
+.u3, .u3 td,
+.u4, .u4 td,
+.u5, .u5 td,
+.u6, .u6 td
+    {font-family: arial, helvetica;}
+
+
+.m1b, .m1b td
+    {font-family: ms sans serif, geneva, helvetica; font-weight: bold; }
+
+.a1f, .a1f td { font-size: 11px;
+      font-family: arial, helvetica; }
+.v1f, .v1f td { font-size: 11px;
+      font-family: verdana, geneva, helvetica; }
+.m1f, .m1f td { font-size: 11px;
+      font-family: ms sans serif, geneva, helvetica; }
+.t1f, .t1f td { font-size: 11px;
+      font-family: trebuchet ms, arial, helvetica; }
+
+.w, .w a { color: #FFF }
+.b, .b a { color: #000 }
+.g, .g a { color: #FC6; }
+.ly, .ly a { color: #FFC }
+.cy, .cy a { color: #FC0 }
+.dy, .dy a { color: #C93 }
+.lg, .lg a { color: #9C9 }
+.cg, .cg a { color: #093 }
+.dg, .dg a { color: #063 }
+.br, .br a { color: #F00 }
+.dr, .dr a { color: #C00 }
+.dr2, .dr2 a { color: #900 }
+.g1, .g1 a { color: #EEE }
+.g2, .g2 a { color: #CCC }
+.g3, .g3 a { color: #666 }
+.g4, .g4 a { color: #333 }
+.g5, .g5 a { color: #999 }
+.g6, .g6 a { color: #777 }
+.sb, .sb a { color: #69F }
+.lb, .lb a { color: #39F }
+.bb, .bb a { color: #00F }
+.bb2, .bb2 a { color: #069 }
+.db, .db a { color: #009 }
+.db2, .db2 a { color: #036 }

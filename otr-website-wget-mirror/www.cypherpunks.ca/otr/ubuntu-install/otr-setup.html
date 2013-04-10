@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Setting up OTR on Ubuntu</title></head>
+
+<body>
+<h1>Setting up OTR on Ubuntu</h1>
+
+<p>These steps should also work on other Debian based distributions (although, installation may differ slightly, as there may be updated packages from the distributor). There are 4 steps you need to perform to get set up.</p>
+<ol>
+<li><a href="#install">Install libotr and gaim-otr</a></li>
+<li><a href="#enable">Enable the OTR plugin in gaim</a></li>
+<li><a href="#genkeys">Generate private keys</a> [optional]</li>
+<li><a href="#convo">Begin a conversation</a></li>
+</ol>
+<p>You will need to have <a href="http://gaim.sourceforge.net/">gaim</a> installed before you begin.</p>
+
+<h4><a name="install">1) Install libotr and gaim-otr</a></h4>
+
+<p>First of all, you need to get the .tar.gz (source) files for libotr and gaim-otr. You can download them from <a href="http://www.cypherpunks.ca/otr/#downloads">the main OTR site</a>.
+You do not need the otrproxy file. Make sure gaim is closed for this
+step. Open a terminal, and install the two components by typing:</p>
+<pre>tar xzf libotr-3.0.0.tar.gz
+cd libotr-3.0.0
+./configure --prefix=/usr && make && sudo make install
+</pre>
+<p>for libotr, and</p>
+<pre>
+tar xzf gaim-otr-3.0.0.tar.gz
+cd gaim-otr-3.0.0
+./configure --prefix=/usr && make && sudo make install
+</pre>
+<p>for gaim-otr.</p>
+<p>If you do not have sudo installed, you can substitute </p>
+<pre>su -c "make install"</pre>
+<p> instead of </p>
+<pre>sudo</pre>
+<p>Make sure to replace the version number with that of the files you have downloaded.</p>
+
+<h4><a name="enable">2) Enable the OTR plugin in gaim</a></h4>
+
+<p>Start gaim. Click on Tools --&gt; Preferences. Choose "Plugins" from
+the left panel. Find the plugin in the right panel titled
+"Off-the-Record Messaging. Click on the check box to enable it.</p>
+<p><img alt="enabling the OTR plugin" src="otr-enable.png"><br></p>
+
+<h4><a name="genkeys">3) Generate private keys</a></h4>
+
+<p>[Note:  This step is optional.  If you don't generate keys in this way, 
+they will be generated automatically when needed.]
+
+</p><p>Now, open the preferences for the OTR plugin. You may need to
+expand the plugins arrow. Click on the "Config" tab. Click the
+"Generate" button. If you have more than one account set up, you can
+select another account and generate a key-pair for that as well. Here
+you can also set up whether or not to automatically use OTR.<br>
+<img alt="generating OTR keys" src="otr-genkeys.png"><br>
+If you do not want OTR to attempt to set up a private connection with
+certain contacts, you can edit the options for that contact.</p>
+<p><img alt="setting per-contact options" src="otr-percontact.png"></p>
+
+<h4><a name="convo">4) Begin a conversation</a></h4>
+
+<p>Now, all you have to do is start talking to someone who has OTR. The
+first time you talk to them, you will see a dialog explaining that you have received a new fingerprint from them. A fingerprint is a string of letters and numbers which uniquely identify a key.<br>
+<img alt="receiving unknown fingerprints" src="otr-fingerprints.png"><br>
+Notice the button which says "OTR: Unverified" in the conversation window. This means your conversation is private, but that you have not verified the identity of your contact. You can verify the fingerprint by right-clicking on the OTR button and choosing "Verify fingerprint".<br>
+<img alt="an unverified conversation" src="otr-unverified.png"><br>
+Once you have verified the identity of the fingerprint's owner, the button's text will change to "OTR: Private".<br>
+<img alt="verifying a buddy's fingerprint" src="otr-verify.png"><br>
+<img alt="a fully private conversation" src="otr-trusted.png"><br>
+If the button says "OTR: Not private" and you wish to use OTR with this contact, simply press the button.</p>
+</body></html>

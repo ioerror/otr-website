@@ -1,0 +1,263 @@
+<!--
+A:LINK {
+    text-decoration:    none;
+}
+
+A:VISITED {
+    text-decoration:    none;
+    color:              #3333CC;
+}
+
+A:HOVER {
+    text-decoration:    underline;
+}
+
+INPUT.search, TEXTAREA.search, OPTION.search, SELECT.search {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          10px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+INPUT, TEXTAREA, OPTION, SELECT {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+TABLE, TR, TD {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.footerText {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.textAdText {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          10px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.navigationText {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.menuText {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          11px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+A.menuText {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          11px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.textAdLink {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          10px;
+    font-weight:        normal;
+    text-decoration:    underline;
+    color:              #0000FF;
+}
+
+
+.frontPageTopTitle {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          20px;
+    font-weight:        bold;
+    color:              #000000;
+}
+
+.frontPageTitle {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          16px;
+    font-weight:        bold;
+    color:              #000000;
+}
+
+
+.frontPageSubTitle {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+
+.frontPageLead {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.readArticleLink {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-weight:        bold;
+    color:              #3333CC;
+}
+
+.relatedArticleLink {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-weight:        normal;
+    color:              #3333CC;
+}
+
+
+.articleTitle, .testBoxTitle {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          20px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+
+.articleSubTitle, .subTitle {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          16px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+
+.articleFillTitle, .mellomtittel {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+
+.imageText {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-style:         italic;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.articleLead {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.smallFont, .footerText {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          10 px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.adminFormTitle {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12 px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.adminMenuTitle {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          14 px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+.adminMenuItem {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          14 px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #000000;
+}
+.adminMenuItem:LINK, .adminMenuItem:ACTIVE, .adminMenuItem:VISITED {
+    text-decoration:    none;
+    color:              #000000;  
+}
+.adminMenuItem:HOVER {
+    text-decoration:    underline;
+    color:              #000000;  
+}
+
+.errorMsg {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          12 px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #FF0000;
+}
+
+.smallBlackLink {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          10 px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #000000;
+}
+
+A.smallBlackLink:LINK, A.smallBlackLink:ACTIVE, A.smallBlackLink:VISITED {
+    text-decoration:    none;
+    color:              #000000;  
+}
+
+A.smallBlackLink:HOVER {
+    text-decoration:    underline;
+    color:              #000000;  
+}
+
+
+.smallPhorumLink {
+    font-family:        Arial,Helvetica,sans-serif;
+    font-size:          10 px;
+    font-weight:        bold;
+    text-decoration:    none;
+    color:              #999999;
+}
+
+A.smallPhorumLink:LINK, A.smallPhorumLink:ACTIVE, A.smallPhorumLink:VISITED {
+    text-decoration:    none;
+    color:              #999999;  
+}
+
+A.smallPhorumLink:HOVER {
+    text-decoration:    underline;
+    color:              #999999;  
+}
+-->

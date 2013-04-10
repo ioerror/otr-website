@@ -1,0 +1,206 @@
+/*
+** 'The Register' default colour scheme CSS
+**
+** by Hannah Dee & Smylers
+**
+** colours (foreground, background, border, and background images) used in
+** normal 'Reg' pages, defined separately from the layout, formatting, and
+** positioning so that a different-coloured theme can easily be used without
+** changing anything else
+**
+** CSS rules below are arranged to minimize the number of different places
+** where a particular colour number has to be specified, to make it easier to
+** change colours consistently.  Where repetition is unavoidable, the rules are
+** adjacent to make this as obvious as possible.
+** 
+** This file is served to all browsers, so only the small subset of CSS that
+** works in all browsers that do CSS can be used here.  In some cases that
+** means that 'too many' things are set here for a particular browser -- but
+** the layout style-sheet is browser-dependent and can turn off the unrequired
+** things.  In practice the main restriction here is not being able to use
+** child selectors, because 'IE' doesn't recognize them, and having to use the
+** less efficient descendent selectors instead.
+*/
+
+
+body
+{
+  background-color: #FFF;
+  background-image: url(/Design/graphics/Reg_default/red_left_edge.png);
+  background-repeat: repeat-y;
+}
+
+/* links are blue by default, red when visited, but some specific types are
+** always red or blue regardless of visitedness, and trailers are also this
+** same red; see the bottom of the file for colours when hovered over,
+** focussed, or active: */
+a:link, .VertMenu a:visited, .YouAreHere a:visited
+{
+  color: #00D;
+}
+a:visited, .Label, .Refresh a
+{
+  color: #D00;
+}
+
+/* other text is mostly black, as are links in the subsection menu: */
+body, #SubsectionMenu a
+{
+  color: #000;
+}
+
+
+/* red background on various boxes; also the separator between items in the
+** subsection menu: */
+
+#MastheadMain, #MastheadTop, #Footer, #Search, #Related h3, #RelatedStuff th
+{
+  background-color: #F00;
+}
+
+#SubsectionMenu li, #NewsPanel #Content
+{ 
+  border-color: #F00;
+}
+
+/* orangier tinge to buttons (but not too orangey for crows): */
+.Buttons
+{ 
+  background-color: #F30;
+}
+
+/* orange highlight along top and left and dark red shadow along right and
+** bottom to give raised 3D appearance against red background; same shadow
+** colour used to outline buttons sometimes on all sides; the highlight colour
+** is also used on the top and left of buttons, but this has to be provided by
+** an over-large background image, since the border properties have already
+** been used for the outline: */
+#MastheadMain, #Footer, #Search, #Search p, #Related h3, #RelatedStuff th, #NewsPanel h1
+{
+  border-color: #F96 #900 #900 #F96;
+}
+.DropMenu
+{
+  border-color: #900;
+}
+.Buttons, .Buttons a
+{ 
+  border-color: #900;
+}
+#SectionMenu, .Buttons a
+{
+  background-image:
+      url(/Design/graphics/Reg_default/red_highlight_top_left.png);
+}
+
+/* white text against a red background (all occurrences of .Menu are in
+** #Masthead or #Footer, so this works right even if it doesn't look it); it
+** shouldn't be necessary to specify .Menu a:visited (.Menu a and a:visited
+** both have a CSS specificity of 11, so .Menu a, being later, should
+** have affect, bue 'IE' gets this wrong and uses the general a:visited colour
+** if .Menu a:visited isn't specified); .Menu includes #SitesMenu, but
+** 'Netscape Navigator 4' needs the latter specifying explicitly: */
+#Masthead, #Masthead a, #Footer, .Menu a, .Menu a:visited, #SitesMenu a,
+#Related h3, #RelatedStuff th
+{
+  color: #FFF;
+}
+
+/* current items highlighted in a kind of gold colour; :active is also set
+** here, not because it makes sense but because 'IE' uses it instead of
+** :focus for a focussed menu item and the default :focus colour of grey
+** doesn't contrast well with the red background; #SitesMenu needs including
+** explicitly because the rule above (for 'Nav' purposes) is more specific than
+** the others here: */
+.Menu a:hover, .Menu a:focus, .Menu a:active,
+#SitesMenu a:hover, #SitesMenu a:focus, #SitesMenu a:active
+{
+  color: #FD9;
+}
+
+
+/* fade from the standard red to a darker shade in #MastheadTop, with an image
+** aligned to the bottom of the slogan; however the #SitesMenu buttons are
+** usually taller than the slogan, in which case the background colour of
+** #Masthead shows through -- this is the only place where it's seen, so set
+** that to be the same colour as the bottom of the dark red fade: */
+#MastheadTop
+{
+  background-image: url(/Design/graphics/Reg_default/red_dark_fade.png);
+}
+#Masthead, .DropMenu
+{
+  background-color: #E00;
+}
+
+/* grey fade on the subsection menu to act as a shadow on the section menu,
+** also used as a rule under the subection menu (with that rule being the
+** section menu shadow on pages where there isn't a subsection menu); ideally
+** this image would just be on the <hr> and not on #UnderMenuBar itself, but
+** 'IE' can't cope with that so it's assigned to both and the layout
+** style-sheet sorts out which is actually used on which browsers: */
+#SubsectionMenu, #UnderMenuBar, #UnderMenuBar hr
+{ 
+  background-image: url(/Design/graphics/Reg_default/btm_shadow.png);
+}
+
+#Footer
+{
+  background-image: url(/Design/graphics/Reg_default/red_watermark_btm.png);
+}
+.WatermarkedBox
+{
+  background-image:
+      url(/Design/graphics/Reg_default/grey_watermark_top_right.png);
+}
+
+h2
+{
+  background-image: url(/Design/graphics/Reg_default/grey_watermark_top.png);
+}
+
+/* pale grey borders above and below headlines, and round some boxes */
+h2, .WatermarkedBox, #Related, #RelatedStuff, #Teaser
+{
+  border-color: #DDD;
+}
+
+/* section links and dates in dark grey, which helps distinguish them from
+** headlines and standfirsts but avoids giving them prominence; the :visited
+** variants shouldn't be needed to override visited links being red cos that
+** rule and this one both have a specifity of 11 and this one should win, being
+** later, but do seem to be needed to make 'IE' do the right thing: */
+.Section a, .Section a:visited, .Date
+{
+  color: #666;
+}
+
+#Related h3, #RelatedStuff th.LastItem
+{
+  background-image: url(/Design/graphics/Reg_default/red_watermark_top.png);
+}
+
+/* errors in forms, shown against a pink background */
+.Error
+{
+  background-color: #FBB;
+  color: #000;
+}
+
+
+/* dynamic link colours, at the bottom of the file to override any other rules
+** of the same specificity -- a:visited:hover, etc should override any .Class
+** a:visited selectors (same specificity of 21, but this one is later); that
+** doesn't work in 'IE', so explicit selectors for each class are used here
+** here; medium grey for hover and focus, a subtlety lighter shade when active:
+** */
+a:hover, a:focus, #SubsectionMenu a:hover, #SubsectionMenu a:focus,
+.YouAreHere a:hover, .YouAreHere a:focus, .VertMenu a:hover, .VertMenu a:focus
+{
+  color: #888;
+}
+a:active, a:visited:active, #SubsectionMenu a:active
+.YouAreHere a:active, .VertMenu a:active
+{
+  color: #AAA;
+}

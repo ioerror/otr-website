@@ -1,0 +1,1045 @@
+/*
+** 'The Register' layout CSS
+**
+** by Hannah Dee & Smylers
+**
+** CSS2 standards-compliant edition
+**
+** This file just specifies things such as layout, formatting, and positioning.
+** All colours (foreground, background, border, and background images) are set
+** in a separate style-sheet, so that it's easy for different sections to have
+** different colour schemes but keep everything else the same.
+*/
+
+
+/*
+** General Page Settings
+*/
+
+/* no spacing round the edge, so that borders and boxes can go right to the
+** window edge; spaces are inserted on other boxes in the pages: */
+html, body
+{
+  margin: 0;
+  padding: 0;
+}
+
+body, textarea
+{
+  font-family: Helvetica, Arial, sans-serif;
+
+  /* bevel down left: */
+  background-repeat: repeat-y;
+}
+
+
+h2
+{
+  font-size: 150%;
+
+  /* no top margin, so flush with top of adverts on homepage; bottom margin of
+  ** .YouAreHere provides a gap on other pages: */
+  margin: 0 0 0.7ex;
+  padding: 0.5ex 0;
+
+  /* watermark: */
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  /* room for the buttons on articles, even for users with very small fonts: */
+  min-height: 21px;
+
+  border-style: solid none;
+  border-width: 1px;
+}
+
+/* gap between paragraphs (and other things used in a similar to paragraphs)
+** achieved with top margin on subsequent paragraphs: */
+p, form, .Ad > div
+{
+  margin-top: 1.6ex;
+  margin-bottom: 0;
+}
+
+p, form
+{
+  padding: 0;
+}
+
+/* no margin above first paragraph (nor indeed below the last one) to allow for
+** situations such as paragraphs in a box where these should go outside the
+** borders; no margin after subheading, to allow this gap to be determined by
+** the bottom margin on the subheading: */
+p:first-child, noscript:first-child + form, form:first-child, h3 + p, h4 +p,
+.Ad > div:first-child
+{
+  margin-top: 0;
+}
+
+td
+{
+  vertical-align: top;
+}
+
+img
+{
+  border: none;
+}
+
+/* For bullet lists (such as those on daily archive index pages) don't have the
+** indent for the bullet being _quite_ so big as by default, and have a smidgen
+** of space between items: */
+ul
+{
+  padding: 0 0 0 1.6em;
+}
+li
+{
+  margin: 0 0 0.3ex;
+  padding: 0;
+}
+
+blockquote {
+  margin: 1ex 1em;
+  padding: 0;
+  font-weight: bold;
+}
+
+.Sidebar {
+  width: 25%;
+  min-width: 100px;
+  float: right;
+  margin-left: 1em;
+}
+
+.NoCSS
+{
+  display: none;
+}
+
+/* level-3 headings only a little bigger than ordinary text (though still bolder), and
+** with extra space above and below: */
+h3
+{
+  font-size: 110%;
+  margin: 2ex 0 0.8ex;
+}
+
+/* level-4 headings same size as ordinary text (though still bolder), and
+** with extra space above and below: */
+h4
+{
+  font-size: 100%;
+  margin: 2ex 0 0.8ex;
+}
+
+
+/*
+** Menus
+**
+** lists of links; only makes sense to apply .Menu or .VertMenu to a <ul>;
+** .Menu is a horizontal menu bar across the page, and .VertMenu is a vertical
+** list
+*/
+
+.Menu, .VertMenu, .DropMenu
+{
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* all styling on the <a> inside the <li>, not on the <li> itself, because that
+** is what gets overridden on each page for the currently selected item, if
+** applicable (it ought to be possible to override the <li> for the currently
+** selected item, but 'IE has a bug where setting the text colour there doesn't
+** affect the colour of the text in the <a> inside it, even when all such <a>s
+** are defined here as having color: inherit): */
+.Menu > li
+{ 
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.Menu > li > a
+{
+  white-space: nowrap;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-decoration: none;
+}
+
+/* .Buttons is additionally applied to a menu that should immitate buttons;
+** right border on all items: */
+.Buttons > li > a
+{
+  border-right-style: solid;
+  border-width: 1px;
+}
+
+/* left border before the first item: */
+.Buttons > li:first-child > a
+{
+  border-left-style: solid;
+}
+
+.Buttons, .Buttons > li > a
+{
+
+  /* It's desired to have the padding on each item, but because the <li> and
+  ** <a> are inline boxes the outer <ul> block box needs to have enough room
+  ** for them to pad in to, so the same padding needs setting on both the <ul>
+  ** and the <a>: */
+  padding-top: 0.5ex;
+  padding-bottom: 0.4ex;
+
+  /* Any background image is a highlight along edges on both each menu item and
+  ** the menu bar as a whole for the spaces left of the first item and right of
+  ** the last (though the latter doesn't seem to render on 'IE'): */
+  background-repeat: no-repeat;
+}
+
+/* Once the DownloadsMenu goes live, StoreMenu will no longer exist, and we can
+ * delete that selector from this rule at that point. */
+#StoreMenu, #DownloadsMenu
+{
+  right: 0;
+}
+
+/* drop-down menus are hidden until activated by JavaScript: */
+.DropMenu
+{
+  display: none;
+
+  /* in front of sponsors logos: */
+  z-index: 10;
+
+  margin-top: 0.5ex;
+  position: absolute;
+
+  border-style: none solid solid solid;
+  border-width: 1px;
+}
+
+.DropMenu > li
+{
+  margin: 0;
+  padding: 0.2ex 0.5ex;
+}
+
+.DropMenu > li > a
+{
+  display: block;
+  border-style: none;
+  text-decoration: none;
+  background-image: none;
+}
+
+.VertMenu > li
+{
+  white-space: nowrap;
+  margin-bottom: 0.3ex;
+}
+
+
+/*
+** Masthead
+*/
+
+/* #Masthead is a <div> that encloses #MastheadTop and #MastheadMain; it has a
+** background colour set but nothing else. */
+
+
+#MastheadTop
+{
+  font-size: 90%;
+
+  /* fade (to darker shade) down through text: */
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+/* menu of other 'Reg' sites, in the top-right corner: */
+#SitesMenu
+{ 
+  float: right;
+
+  /* shadow bottom and left: */
+  border-style: none solid solid none;
+  border-width: 1px;
+}
+
+/* <strong> is used as some way of distinguishing the text (the strapline) in
+** the top bar of the masthead from the sites menu, but is treated as a block
+** for padding; <strong> also makes the strapline stand out nicely in non-CSS
+** browsers, even though the boldness is removed here: */
+#MastheadTop strong
+{
+  font-weight: normal;
+  display: block;
+  padding: 0.5ex 0.6em;
+}
+
+#MastheadMain
+{
+
+  
+  /* below the sites menu: */
+  clear: both;
+                              
+  /* highlight along top: */
+  border-top-style: solid;
+  border-width: 1px;
+                              
+  padding: 0.2ex 0 0.5ex;
+}
+
+/* logo centred across the full width of the page, but leaving a 22% margin
+** left and right: */
+h1
+{
+  padding: 0;
+  margin: 0 22%;
+  text-align: center;
+}
+
+
+/* no space for descenders under image, since no text in <h1>: */
+h1 > a > img
+{
+  vertical-align: bottom;
+}
+
+/* sponsor logo (if any) over at the right, width restricted to 20% so that it
+** comfortably fits in the 22% right margin around the image: */
+#Sponsor
+{
+  width: 20%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+/*
+** Section Navigation
+*/
+
+#SectionMenu
+{
+  text-align: center;
+
+  /* shadow top and bottom: */
+  border-style: solid none;
+  border-width: 1px;
+}
+
+#SubsectionMenu
+{
+  text-align: center;
+  padding-top: 0.5ex;
+  padding-bottom: 0.4ex;
+  margin-left: 3px;
+  font-size: 90%;
+  background-repeat: repeat-x;
+}
+
+#SubsectionMenu li
+{ 
+  border-left-style: solid;
+  border-width: 1px;
+}
+
+#SubsectionMenu > li:first-child
+{ 
+  border-left: none;
+}
+
+/* <hr> underneath the menu separating it from the rest of the page; is in a
+** seemingly pointless <div> rather than having an ID on itself because this
+** gets round separate bugs in 'IE' and 'Opera'; remove the background image
+** from the <div> that is also only there for 'IE' and 'Opera' reasons: */
+#UnderMenuBar
+{
+  background-image: none;
+}
+#UnderMenuBar hr
+{
+  
+  /* fade going across the very top, directly beneath the menu: */
+  background-repeat: repeat-x;
+  height: 4px;
+
+  /* absolutely nothing between the background image and the menu above: */
+  margin: 0 0 0.7ex 3px;
+  padding: 0;
+  border-style: none;
+}
+
+
+/*
+** Page Footer
+*/
+
+#Footer
+{
+  margin-top: 2ex;
+  font-size: 90%;
+  padding: 0.7ex 2.5em 0.8ex 0.2em;  
+
+
+  /* watermark: */
+  background-position: bottom right;
+  background-repeat: no-repeat;
+
+  border-style: solid;
+  border-width: 2px;
+}
+
+#Copyright
+{
+  float: right;
+}
+
+
+/*
+** Main Page Columns
+*/
+
+/* 3-col 1-row table for providing the main columns: */
+#MainCols
+{
+
+  /* 5_px at the left to clear the bevel running down that edge: */
+  margin: 1.5ex 0 1ex 5px;
+
+  /* no space in general between the cells: */
+  border-collapse: collapse;
+}
+
+/* no space at all around the left and right cells: */
+td.Ad
+{
+  padding: 0;
+}
+
+/* left and right padding on the central cell, to produce the gutter between
+** the columns but no extraneousness gap round the edges: */
+#Content
+{
+  padding: 0 1.2em;
+}
+
+
+/*
+** Adverts
+*/
+
+/* any ad at the top (or bottom) should clear the bevel running down the left
+** edge: */
+div.Ad
+{
+  margin: 1ex 0 0 5px;
+}
+
+/* Ads are centred within the space allocated for them; unfortunately this also
+** centres text within ads (and the search and services boxes, which are
+** treated like ads), so any that actually have text in them need setting back
+** to left: */
+.Ad
+{
+  text-align: center;
+}
+.Ad div
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ads within articles have text wrapping round the right of them, so need
+** space on all sides but the left.  Have more space above so that the ad
+** doesn't jut out above the start of the paragraph that's next to it: */
+#Body .Ad
+{
+  float: left;
+  margin: 2ex 1em 1ex 0
+}
+
+.TextAd
+{
+  clear: both;
+}
+
+.TextAdCol
+{
+  float: left;
+  width: 50%;
+  margin-bottom: 1ex;
+}
+
+ul.TextAdCol
+{
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  font-size: 87%;
+}
+
+.TextAdCol li
+{
+  padding-left: 20px;
+  background-image: url(http://www.theregister.co.uk/Design/graphics/icons/vulture_bullet.png);
+  background-repeat: no-repeat;
+}
+
+.TextAdCol > div
+{
+  padding-right: 1em;
+}
+
+/*
+** Specific Page Components
+*/
+
+
+/* Box with the N most popular stories */
+
+#TopNBox ol {
+  margin: 0 0 0 2em;
+  padding-left: 0;
+  width: 110px;
+}
+
+#TopNBox ol li {
+  font-size: 75%;
+  white-space: normal;
+}
+
+
+/* <form>: */
+#Search
+{
+  text-align: left;
+  padding: 5px 0;
+
+  /* highlight along top and left; shadow along bottom and right: */
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* <p> inside the <form>; pretty bogus from a mark-up point of view (this
+** styling could otherwise go directly on the <form>), but used to provide the
+** extra horizontal 'ridges' across the wide top and bottom bands: */
+#Search > p
+{
+
+  /* be the parent box for the purpose of absolute positioning, so that the
+  ** submit button can be positioned relative to this <p>: */
+  position: relative;
+
+  /* highlight ridge along the top, shadow along the bottom, to give a raised
+  ** effect: */
+  border-style: solid none;
+  border-width: 1px;
+
+  /* 27px right padding to make a space for the submit button to be moved into
+  ** where it won't overlap the textbox; top and bottom padding so that the
+  ** ridges appear in the middle of bands of solid background coulour: */
+  padding: 6px 27px 6px 3px;
+}
+
+/* textbox stretched to all of available space, so it goes right up to the
+** space that's been left for the button: */
+
+#Search > p > input[type=text]
+{
+  width: 100%;
+
+  /* Ensure the textbox is at least as tall as the submit button, so that the
+  ** bottom border doesn't get too close to the button: */
+  min-height: 21px;
+}
+
+/* position the button in the gap that's been left to the right of the textbox:
+*/
+#Search > p > input[type=image]
+{
+  display: block;
+  position: absolute;
+  right: 3px;
+  top: 6px;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* box with border round it and 'watermark' in the top-right corner, such as
+** the services menu (in fact currently only the services menu, but it could be
+** used for something else): */
+.WatermarkedBox
+{
+  text-align: left;
+
+  /* single border running all the way round the outside, with the watermark
+  ** just clear on the top-right corner by a single pixel; actually that can't
+  ** be done (1px vertically is one pixel from the top, but 1px horizontally is
+  ** from the left; -1px is also from the left, but crops the left-most column;
+  ** 99% might work if the box is rendered an appropriate number of pixels
+  ** wide; but the only setting that works from the right is 'right' and there
+  ** isn't a way of measuring a pixel (or 0.1em or anything) from the there),
+  ** so instead ensure that the image used has a blank row and column along
+  ** those edges (ugh!); actually, even that doesn't work in 'IE' -- the outer
+  ** edge is positioned under the border (rather than inside it), so the
+  ** watermark still touches the border, so the image actually has to have 2
+  ** blank rows and columns along the edge (which makes the gap wider than
+  ** desired in standards-compliant browsers, but it doesn't look bad -- I knew
+  ** that eventually 'IE' would have a bug whose work-around had a negative
+  ** effect in other browsers): */
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.5ex 0.5em 1ex;
+
+
+  /* squeeze the box in a little so that the border stands out more from any
+  ** other nearby borders: */
+  margin-left: 2px;
+  margin-right: 2px;
+
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+
+.WatermarkedBox > h3
+{
+  margin: 0.3ex 0 0.6ex;
+  padding: 0;
+}
+
+/* links to all ancestor pages (often called 'breadcrumbs', but that isn't
+** right, because breadcrumbs would be a trail of how a particular reader
+** reached the current page, which may not be by navigating down the
+** hierarchy): */
+.YouAreHere
+{
+  font-size: 90%;
+
+  /* space above the <h2>: */
+  margin-bottom: 0.7ex;
+}
+
+
+/*
+** Home Page & Section Indexes
+*/
+
+#Index > table
+{
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+/* space after all rows: */
+#Index > table > tbody > tr > td
+{
+  padding: 0 0 1ex;
+}
+
+/* gutter as space before subsequent columns, but not the first one: */
+#Index > table > tbody > tr > td + td
+{
+  padding-left: 1em;
+}
+
+.Section
+{
+  font-size: 75%;
+}
+
+/* headline -- big bold text, but squashed together: */
+#Index > table > tbody > tr > td > h3, #Teaser h3
+{
+  font-size: 138%;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  margin: 0.1ex 0;
+  padding: 0;
+}
+
+#Index h3 > a,
+.Section > a,
+#Teaser a
+{
+  text-decoration: none;
+}
+
+#Index > table > tbody > tr > td > .Standfirst,
+#Teaser .Standfirst
+{
+  line-height: 1.1;
+}
+
+.Label
+{
+  padding-right: 0.25em;
+}
+
+#IndexBtm
+{
+  margin: 1ex 0.5em 1ex 0;
+  text-align: right;
+}
+
+
+/*
+** Archive
+*/
+
+/* no margin above/below each sections' list on daily archive pages, cos the
+** margins on the <h3>s take care of that nicely: */
+#Archive > h3 + ul
+{
+  margin: 0;
+}
+
+
+/*
+** Teaser
+*/
+
+#Teaser {
+  border-width: 1px 0;
+  border-style: solid none;
+  margin: 0 0 0.5em 0;
+  padding: 0.2ex 0;
+}
+
+/* A teaser within the Index div (as in the Channel section) needs extra
+** bottom-margin: */
+#Index #Teaser {
+  margin-bottom: 1em;
+}
+
+#Teaser img {
+  padding: 0 0.6em 0.4em 0;
+}
+
+#Teaser h3 {
+  padding: 0;
+  margin: 0 0 0.4ex 0;
+}
+
+#Teaser tr {
+  vertical-align: top;
+}
+
+#Teaser .Standfirst {
+  font-weight: normal;
+}
+
+#Index {
+  clear: both;
+}
+
+
+
+/*
+** Search Results
+*/
+
+#SearchResults > h3
+{
+  padding: 0;
+  margin: 1.2ex 0 0.1ex;
+}
+
+.PageNav
+{
+  margin-top: 2ex;
+}
+
+
+/*
+** News Panel
+*/
+
+#NewsPanel
+{
+  font-size: 80%;
+}
+
+/* images put on by the colour style-sheet removed: */
+#NewsPanel, #NewsPanel h2
+{
+  background-image: none;
+}
+
+#NewsPanel #MastheadMain
+{
+  margin: 0 0 0em;
+  border: none;
+}
+
+/* highlight and shadow rules, with space above and below each: */
+#NewsPanel h1
+{
+  margin: 0.1ex 0;
+  padding: 0.1ex 0;
+  border-style: solid none;
+  border-width: 1px;
+
+  /* Even though the <h1> contains only an image, browsers leave enough space
+  ** some text -- which, if taller than the image leaves an ugly gap at the
+  ** top.  So reduce the size of the non-existent text: */
+  font-size: 60%;
+}
+
+#NewsPanel > #Content
+{
+  border-style: none solid;
+  border-width: 1px;
+  padding: 0.7ex 0.3em;
+}
+
+#NewsPanel > #Content > h2
+{
+  font-size: 125%;
+  margin: 0;
+  padding: 0.2ex 0;
+  min-height: 0;
+}
+
+.Refresh
+{
+  margin: 0;
+}
+
+#NewsPanel > #Content > h3
+{
+  margin: 1ex 0 0;
+}
+
+#NewsPanel > #Footer
+{
+  margin: 0;
+  border: none;
+  text-align: center;
+  padding: 0.2ex 0.1em 0.4ex;
+}
+
+
+/*
+** Article
+*/
+
+/* e-mail friend and printer-friendly icons at the top of an article, over at
+** the right but nudged down and left to appear inside the headline <h2> but
+** clear of its watermark: */
+.IconsTop
+{
+  float: right;
+  padding: 0.8ex 28px 0.8ex 0;
+}
+.IconsTop a
+{
+  padding-left: 0.5em;
+}
+
+/* page numbers on multiple-page articles to the right of the byline: */
+.PageNum
+{
+  font-size: 90%;
+  float: right;
+}
+
+/* main content of article: */
+#Body
+{
+  margin-top: 2ex;
+}
+
+/* Images within stories should have some horizontal space round them. */
+#Body > p img[align=left] {
+  padding-right: 0.6em;
+  padding-bottom: 0.2em;
+}
+#Body > p img[align=right] {
+  padding-left: 0.6em;
+  padding-bottom: 0.2em;
+}
+
+
+/* similar icons at the bottom, but floated left so that the page numbers (if
+** any) appear at the right: */
+.IconsBtm
+{
+  float: left;
+  padding: 0.8ex 0;
+}
+.IconsBtm a
+{
+  padding-right: 0.5em;
+}
+
+
+/*
+** Related Reading (deprecated!)
+*/
+
+#Related
+{
+  clear: both;
+  border-style: none none solid;
+  padding-bottom: 0.5ex;
+  margin-bottom: 0.5ex;
+  border-width: 1px;
+}
+
+#Related > h3
+{
+  margin: 2ex 0 1ex;
+  padding: 2px;
+   
+  border-width: 2px; 
+  border-style: solid;
+
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+#Related h4
+{
+  font-size: 100%;
+  margin: 0;
+  padding: 0 1em 0 0;
+}
+
+#Related h4 a
+{
+  text-decoration: none;
+}
+
+#Related ul
+{
+  margin: 0;
+  padding: 0 1em 0 0;
+  list-style-type: none;
+  font-size: 90%;
+}
+
+#Related li
+{
+  margin-bottom: 0.5ex;
+}
+
+#Related > p
+{
+  margin: 0;
+}
+
+/* something to hang clear: both off, but not actually displayed: */
+#Related > hr
+{
+  clear: both;
+  visibility: hidden;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border-style: none;
+}
+
+
+/*
+** Related Stuff (to replace related reading)
+*/
+#RelatedStuff
+{
+  clear: both;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding-bottom: 0.5ex;
+  margin-bottom: 0.5ex;
+  border-collapse: collapse;
+}
+
+#RelatedStuff th
+{
+  margin: 2ex 0 1ex;
+  padding: 2px;
+
+  text-align: center;
+
+  border-width: 2px 0;
+  border-style: solid;
+
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+#RelatedStuff th.FirstItem {
+  border-left-width: 2px;
+}
+
+#RelatedStuff th.LastItem {
+  border-right-width: 2px;
+}
+
+#RelatedStuff th, #RelatedStuff td {
+  width: 33%;
+}
+
+#RelatedStuff td
+{
+  border: none;
+  padding: 0.5em;
+}
+
+#RelatedStuff > h4
+{
+  font-size: 100%;
+  margin: 0;
+  padding: 0 1em 0 0;
+  text-align: right;
+}
+
+
+#RelatedStuff ul
+{
+  margin: 0;
+  padding: 0 1em 0 0;
+  list-style-type: none;
+  font-size: 90%;
+}
+
+
+.Quote
+{
+  text-decoration: none;
+}
+
+/* rules for form rows, and widgets within them: */
+.Row {
+  padding: 1ex;
+}
+
+.Row .Widget {
+  padding-left: 4ex;
+}
+
+/* For surveys/questionnaires */
+.SurveyQuestion
+{
+  padding-bottom: 2em;
+}
+.SurveyAnswer
+{
+  clear: both;
+  padding: 0.25em 1.5em;
+}
+.SurveyAnswerText
+{
+  width: 75%;
+  float: left;
+  padding-right: 1em;
+}

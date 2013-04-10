@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Setting up OTR on Gentoo</title>
+</head>
+
+<body>
+
+<h1>Setting up OTR on Gentoo</h1>
+
+<p>Setting up OTR with Pidgin on Gentoo is a fairly simply process requiring only four steps.</p>
+
+<ol>
+	<li><a href="#install">Install libotr and pidgin-otr</a></li>
+	<li><a href="#enable">Enable the OTR plugin in Pidgin</a></li>
+	<li><a href="#setoptions">Set options</a> [optional]</li>
+	<li><a href="#convo">Begin a conversation</a></li>
+</ol>
+
+<p>Note: Following this process will cause <a href="http://pidgin.im/">Pidgin</a>, if you have not already done so, to become installed.</p>
+
+<h2><a name="install">1) Install libotr and gaim-otr</a></h2>
+
+<p>Simply emerge the plugin; Portage will take care of all dependencies automatically:</p>
+<pre>emerge pidgin-otr</pre>
+
+<h2><a name="enable">2) Enable the OTR plugin in Pidgin</a></h2>
+
+<p>Start Pidgin. Select Tools --&gt; Plugins. Locate the plugin titled "Off-the-Record Messaging". Click on the check box to enable it.</p>
+<p><img alt="enabling the OTR plugin" src="otr-enable.png"></p>
+
+<h2><a name="setoptions">3) Set options</a></h2>
+
+<p>[Note: This step is optional. OTR will function fine without any configuration, but setting options may make OTR more useful to you.]</p>
+
+<p>Ensure the plugin window is open and "Off-the-Record Messaging" is selected, then click "Configure Plugin".</p>
+<p><img alt="OTR configuration dialogue" src="otr-options.png"></p>
+
+<h3>Generating a key</h3>
+<p>If you wish to generate a key now, select the desired account from the "Key for account" list, and click "Generate". If Pidgin seems to freeze up for a while during this process, it doesn't have enough random data (/dev/random is empty). To fix this, try moving your mouse around wildly, or mashing the keyboard in a text document.</p>
+
+<h3>Default OTR settings</h3>
+
+<p>Here you can set how OTR will behave by default.</p>
+
+<ul>
+	<li><b>Enable private messaging</b> - this turns OTR on/off</li>
+	<li><b>Automatically initiate private messaging</b> - this will silently try to make every conversation private</li>
+	<li><b>Require private messaging</b> - won't allow you to talk with anyone that does not have OTR (not recommended)</li>
+	<li><b>Don't log OTR conversations</b> - any conversation you have using OTR will not be logged</li>
+</ul>
+
+<h3>Per-user settings</h3>
+<p><img alt="OTR per-user configuration dialogue" src="otr-individual1.png">
+<img alt="OTR per-user configuration dialogue" src="otr-individual2.png"></p>
+
+<p>The settings here are the same as described in "Default OTR Settings" (above). This simply allows you to have different settings for different people.</p>
+
+<h2><a name="convo">4) Begin a conversation</a></h2>
+
+<p>Now, all you have to do is start talking to someone who has OTR. The first time you talk to them, you will receive a message about authenticating your buddy. For more information about this, please consult the <a href="http://www.cypherpunks.ca/otr/help/authenticate.php?lang=en">OTR documentation</a>.<p>
+
+<p>That's all there is to it!</p>
+
+<p>Note: Format and some parts of this guide based on those by Adam Zimmerman.</p>
+
+</body>
+</html>
